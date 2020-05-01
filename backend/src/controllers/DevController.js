@@ -4,12 +4,14 @@ const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
     async index(req, res) {
+        console.log("Showing users")
         const devs = await Dev.find();
 
         return res.json(devs);
     },
 
     async store(req, res) {
+        console.log("Registring user")
         const { github_username, techs, latitude, longitude } = req.body;
 
         let dev = await Dev.findOne({ github_username });

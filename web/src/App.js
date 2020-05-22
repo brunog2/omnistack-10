@@ -13,10 +13,13 @@ function App() {
   const [devs, setDevs] = useState([]);
 
   useEffect(() => {
+    
     async function loadDevs() {
-      const reponse = await api.get('/devs');
-
-      setDevs(reponse.data);
+    
+      const response = await api.get('/devs');
+      
+      setDevs(response.data);
+      
     };
 
     loadDevs();
